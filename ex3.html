@@ -1,0 +1,487 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mundi Gestão TI - Portal Interno</title>
+    <link rel="stylesheet" href="ex3.css">
+</head>
+<body>
+    <div class="browser-bar">
+        <div class="browser-buttons">
+            <div class="browser-btn red"></div>
+            <div class="browser-btn yellow"></div>
+            <div class="browser-btn green"></div>
+        </div>
+        <div class="browser-url" id="browserUrl">https://mundi-gestao-ti.com.br/portal</div>
+    </div>
+
+    <nav class="top-nav">
+        <div class="nav-container">
+            <div class="nav-left">
+                <button class="nav-btn" onclick="window.location.href='ex2.html'">
+                    <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path><polyline points="9 22 9 12 15 12 15 22"></polyline></svg>
+                </button>
+            </div>
+            <div class="nav-right">
+                <button class="nav-btn notification">
+                    <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"></path><path d="M13.73 21a2 2 0 0 1-3.46 0"></path></svg>
+                    <span class="notification-badge"></span>
+                </button>
+                <button class="nav-btn">
+                    <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+                </button>
+                <button class="nav-btn">
+                    <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="3"></circle><path d="M12 1v6m0 6v6m8.66-15.66l-4.24 4.24m-4.24 4.24l-4.24 4.24M23 12h-6m-6 0H1m20.66 8.66l-4.24-4.24m-4.24-4.24l-4.24-4.24"></path></svg>
+                </button>
+                <button class="nav-btn">
+                    <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <header class="header">
+        <div class="header-container">
+            <div class="header-left">
+                <h1 class="main-title">MUNDI GESTÃO TI</h1>
+                <p class="subtitle" id="portalSubtitle">PORTAL INTERNO</p>
+            </div>
+            <div class="user-info-box">
+                <div class="user-detail"><span class="label">USUÁRIO:</span><span class="value">Rafael Souza Rosendo</span></div>
+                <div class="user-detail"><span class="label">ÁREA:</span><span class="value" id="areaLabel">Gestão de Redes</span></div>
+            </div>
+        </div>
+    </header>
+
+    <main class="main-content">
+        <div class="content-wrapper">
+            <div class="content-area">
+                <div class="menu-tabs">
+                    <button class="tab-btn active" data-tab="requisicoes">REQUISIÇÕES</button>
+                    <button class="tab-btn" data-tab="dashboard">DASHBOARD</button>
+                    <button class="tab-btn" data-tab="monitoramento">MONITORAMENTO</button>
+                    <button class="tab-btn" data-tab="relatorio">RELATÓRIO</button>
+                </div>
+
+                <!-- REQUISIÇÕES -->
+                <div class="tab-content active" id="tab-requisicoes">
+
+                    <!-- Botão Nova Requisição -->
+                    <div style="display:flex; justify-content:flex-end; margin-bottom:1rem;">
+                        <button class="btn-nova-req">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
+                                 style="width:0.9rem;height:0.9rem;flex-shrink:0;">
+                                <line x1="12" y1="5" x2="12" y2="19"></line>
+                                <line x1="5" y1="12" x2="19" y2="12"></line>
+                            </svg>
+                            NOVA REQUISIÇÃO
+                        </button>
+                    </div>
+
+                    <div class="priority-filters">
+                        <button class="priority-btn urgent" data-filtro="urgente">
+                            <svg class="icon-small" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="8" x2="12" y2="12"></line><line x1="12" y1="16" x2="12.01" y2="16"></line></svg>URGENTE
+                        </button>
+                        <button class="priority-btn high" data-filtro="alta">
+                            <svg class="icon-small" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="18 15 12 9 6 15"></polyline></svg>ALTA
+                        </button>
+                        <button class="priority-btn normal" data-filtro="normal">
+                            <svg class="icon-small" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"></line></svg>NORMAL
+                        </button>
+                        <button class="priority-btn low" data-filtro="baixa">
+                            <svg class="icon-small" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"></polyline></svg>BAIXA
+                        </button>
+                    </div>
+                    <div class="tickets-container" id="ticketsContainer"></div>
+                </div>
+
+                <!-- DASHBOARD -->
+                <div class="tab-content" id="tab-dashboard">
+                    <div class="dash-summary" id="dashSummary"></div>
+                    <div class="chart-wrapper">
+                        <div class="chart-header">
+                            <p class="chart-title">Serviços mais requisitados e tempo médio</p>
+                            <span class="chart-period">Últimos 30 dias</span>
+                        </div>
+                        <div id="dashChart"></div>
+                        <div class="chart-footer">
+                            <div class="chart-legend">
+                                <div class="legend-item"><div class="legend-dot req"></div><span>Nº de requisições</span></div>
+                                <div class="legend-item"><div class="legend-dot time"></div><span>Tempo médio (h)</span></div>
+                            </div>
+                            <div class="chart-status">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+                                <span id="dashStatusText">Dados atualizados</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- MONITORAMENTO -->
+                <div class="tab-content" id="tab-monitoramento">
+                    <div id="monitorContainer"></div>
+                </div>
+
+                <!-- RELATÓRIO -->
+                <div class="tab-content" id="tab-relatorio">
+                    <div id="reportContainer"></div>
+                </div>
+            </div>
+
+            <aside class="chat-sidebar">
+                <div class="chat-header"><h2 class="chat-title">CHAMADOS INTERNOS</h2></div>
+                <div class="user-card">
+                    <div class="user-avatar">
+                        <svg class="avatar-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>
+                    </div>
+                    <p class="user-name" id="chatUserName">Anderson Silva</p>
+                    <span class="status-indicator online">Online</span>
+                </div>
+                <div class="chat-messages" id="chatMessages">
+                    <div class="message received"><p id="chatMsg1">Olá, preciso de ajuda com a configuração da rede.</p><span class="message-time">14:25</span></div>
+                    <div class="message sent"><p>Claro! Qual o problema específico?</p><span class="message-time">14:27</span></div>
+                    <div class="message received"><p id="chatMsg2">A conexão está muito lenta no setor administrativo.</p><span class="message-time">14:28</span></div>
+                </div>
+                <div class="chat-input-container">
+                    <input type="text" class="chat-input" placeholder="Digite uma mensagem..." id="messageInput">
+                    <button class="send-btn" id="sendBtn">
+                        <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="22" y1="2" x2="11" y2="13"></line><polygon points="22 2 15 22 11 13 2 9 22 2"></polygon></svg>
+                    </button>
+                </div>
+            </aside>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <button class="logout-btn" onclick="window.location.href='index.html'">
+            <svg class="icon-logout" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"></path><polyline points="16 17 21 12 16 7"></polyline><line x1="21" y1="12" x2="9" y2="12"></line></svg>
+            SAIR DO SISTEMA
+        </button>
+        <p class="footer-text">© 2026 Mundi Gestão TI - Todos os direitos reservados</p>
+    </footer>
+
+<script>
+const GESTOES = {
+  redes: {
+    label: 'Gestão de Redes', url: 'redes',
+    chat: { nome: 'Anderson Silva', msg1: 'Olá, temos uma queda no switch do 3º andar.', msg2: 'A VLAN do setor financeiro também está inacessível.' },
+    summary: { total: 74, concluidos: 61, tempoMedio: '2,1h' },
+    tickets: [
+      { titulo: 'Queda de switch — 3º andar',         prioridade: 'urgente', status: 'Aberto',       data: '08/04/2026', hora: '09:10' },
+      { titulo: 'VLAN financeiro inacessível',         prioridade: 'urgente', status: 'Em andamento', data: '08/04/2026', hora: '09:45' },
+      { titulo: 'Configuração de firewall perimetral', prioridade: 'alta',    status: 'Aberto',       data: '07/04/2026', hora: '14:20' },
+      { titulo: 'Latência elevada na WAN',             prioridade: 'alta',    status: 'Em andamento', data: '07/04/2026', hora: '11:00' },
+      { titulo: 'Renovação de certificado SSL',        prioridade: 'normal',  status: 'Agendado',     data: '06/04/2026', hora: '10:30' },
+      { titulo: 'Atualização de firmware dos APs',     prioridade: 'normal',  status: 'Agendado',     data: '05/04/2026', hora: '16:00' },
+      { titulo: 'Documentação de topologia de rede',   prioridade: 'baixa',   status: 'Aberto',       data: '03/04/2026', hora: '08:00' },
+    ],
+    chart: [
+      { servico: 'Configuração de switches', req: 18, tempo: 2.5 },
+      { servico: 'Manutenção de firewall',   req: 14, tempo: 4.0 },
+      { servico: 'Suporte a Wi-Fi',          req: 22, tempo: 1.5 },
+      { servico: 'Gestão de VLAN',           req: 11, tempo: 3.0 },
+      { servico: 'Troca de cabos / patch',   req: 9,  tempo: 0.8 },
+    ],
+    monitor: [
+      { titulo: 'Queda de switch — 3º andar',         prioridade: 'urgente', data: '08/04/2026', prog: 30 },
+      { titulo: 'VLAN financeiro inacessível',         prioridade: 'urgente', data: '08/04/2026', prog: 55 },
+      { titulo: 'Configuração de firewall perimetral', prioridade: 'alta',    data: '07/04/2026', prog: 20 },
+      { titulo: 'Latência elevada na WAN',             prioridade: 'alta',    data: '07/04/2026', prog: 70 },
+      { titulo: 'Documentação de topologia de rede',   prioridade: 'baixa',   data: '03/04/2026', prog: 10 },
+    ],
+    relatorio: [
+      { titulo: 'Substituição de switch SW-02',        tecnico: 'Rafael S.', data: '01/04/2026', tempo: '1h 40min' },
+      { titulo: 'Reconfiguração de VLAN corporativa',  tecnico: 'Ana P.',    data: '29/03/2026', tempo: '3h 10min' },
+      { titulo: 'Atualização firmware roteador RT-01', tecnico: 'Rafael S.', data: '26/03/2026', tempo: '0h 55min' },
+      { titulo: 'Instalação de AP — sala de reuniões', tecnico: 'Carlos M.', data: '22/03/2026', tempo: '1h 20min' },
+      { titulo: 'Diagnóstico e reparo cabo par-trançado', tecnico: 'Ana P.', data: '18/03/2026', tempo: '0h 45min' },
+    ],
+  },
+  banco: {
+    label: 'Gestão de Banco de Dados', url: 'banco-de-dados',
+    chat: { nome: 'Anderson Souza', msg1: 'O job de backup da madrugada falhou novamente.', msg2: 'O índice da tabela de pedidos está fragmentado acima de 85%.' },
+    summary: { total: 70, concluidos: 58, tempoMedio: '2,6h' },
+    tickets: [
+      { titulo: 'Falha no job de backup noturno',        prioridade: 'urgente', status: 'Em andamento', data: '08/04/2026', hora: '06:15' },
+      { titulo: 'Fragmentação crítica — tabela pedidos', prioridade: 'alta',    status: 'Aberto',       data: '08/04/2026', hora: '08:30' },
+      { titulo: 'Lentidão nas queries do ERP',           prioridade: 'alta',    status: 'Em andamento', data: '07/04/2026', hora: '15:00' },
+      { titulo: 'Upgrade SQL Server 2022',               prioridade: 'normal',  status: 'Agendado',     data: '06/04/2026', hora: '09:00' },
+      { titulo: 'Revisão de permissões de acesso ao BD', prioridade: 'normal',  status: 'Aberto',       data: '05/04/2026', hora: '11:30' },
+      { titulo: 'Criação de usuário de leitura para BI', prioridade: 'baixa',   status: 'Agendado',     data: '04/04/2026', hora: '14:00' },
+      { titulo: 'Documentação de stored procedures',     prioridade: 'baixa',   status: 'Aberto',       data: '02/04/2026', hora: '10:00' },
+    ],
+    chart: [
+      { servico: 'Backup e restauração',  req: 20, tempo: 1.8 },
+      { servico: 'Otimização de queries', req: 15, tempo: 3.5 },
+      { servico: 'Gestão de índices',     req: 17, tempo: 2.2 },
+      { servico: 'Criação de usuários',   req: 10, tempo: 0.5 },
+      { servico: 'Atualização de BD',     req: 8,  tempo: 5.0 },
+    ],
+    monitor: [
+      { titulo: 'Falha no job de backup noturno',        prioridade: 'urgente', data: '08/04/2026', prog: 45 },
+      { titulo: 'Fragmentação crítica — tabela pedidos', prioridade: 'alta',    data: '08/04/2026', prog: 60 },
+      { titulo: 'Lentidão nas queries do ERP',           prioridade: 'alta',    data: '07/04/2026', prog: 80 },
+      { titulo: 'Revisão de permissões de acesso ao BD', prioridade: 'normal',  data: '05/04/2026', prog: 25 },
+      { titulo: 'Documentação de stored procedures',     prioridade: 'baixa',   data: '02/04/2026', prog: 15 },
+    ],
+    relatorio: [
+      { titulo: 'Restauração BD-PROD após falha de disco', tecnico: 'Carla M.', data: '02/04/2026', tempo: '2h 30min' },
+      { titulo: 'Rebuild de índices — tabela clientes',    tecnico: 'Diego T.', data: '30/03/2026', tempo: '1h 05min' },
+      { titulo: 'Criação de usuário leitura — equipe BI',  tecnico: 'Carla M.', data: '27/03/2026', tempo: '0h 20min' },
+      { titulo: 'Migração BD homologação para nova VM',    tecnico: 'Diego T.', data: '24/03/2026', tempo: '4h 15min' },
+      { titulo: 'Ajuste de plano de execução — ERP',       tecnico: 'Carla M.', data: '20/03/2026', tempo: '1h 50min' },
+    ],
+  },
+  acessos: {
+    label: 'Gestão de Acessos', url: 'acessos',
+    chat: { nome: 'Anderson Souza', msg1: 'Um colaborador bloqueado precisa de acesso urgente ao sistema de RH.', msg2: 'Também temos um ex-funcionário com credencial ainda ativa.' },
+    summary: { total: 96, concluidos: 89, tempoMedio: '0,9h' },
+    tickets: [
+      { titulo: 'Desbloqueio urgente — sistema RH',       prioridade: 'urgente', status: 'Em andamento', data: '08/04/2026', hora: '08:55' },
+      { titulo: 'Revogar acesso — colaborador desligado',  prioridade: 'urgente', status: 'Aberto',       data: '08/04/2026', hora: '09:20' },
+      { titulo: 'Criação de perfil — novo gerente TI',     prioridade: 'alta',    status: 'Aberto',       data: '07/04/2026', hora: '13:00' },
+      { titulo: 'Revisão de permissões — setor fiscal',    prioridade: 'alta',    status: 'Em andamento', data: '06/04/2026', hora: '10:00' },
+      { titulo: 'Habilitação de 2FA para diretoria',       prioridade: 'normal',  status: 'Agendado',     data: '05/04/2026', hora: '09:30' },
+      { titulo: 'Auditoria de acessos inativos',           prioridade: 'normal',  status: 'Em andamento', data: '04/04/2026', hora: '14:30' },
+      { titulo: 'Atualização de política de senhas',       prioridade: 'baixa',   status: 'Agendado',     data: '02/04/2026', hora: '11:00' },
+    ],
+    chart: [
+      { servico: 'Criação / bloqueio de contas', req: 24, tempo: 0.4 },
+      { servico: 'Revisão de permissões',        req: 16, tempo: 1.5 },
+      { servico: 'Ativação de 2FA',              req: 18, tempo: 0.3 },
+      { servico: 'Auditoria de acessos',         req: 8,  tempo: 3.0 },
+      { servico: 'Redefinição de senhas',        req: 30, tempo: 0.2 },
+    ],
+    monitor: [
+      { titulo: 'Desbloqueio urgente — sistema RH',       prioridade: 'urgente', data: '08/04/2026', prog: 65 },
+      { titulo: 'Revogar acesso — colaborador desligado',  prioridade: 'urgente', data: '08/04/2026', prog: 20 },
+      { titulo: 'Criação de perfil — novo gerente TI',     prioridade: 'alta',    data: '07/04/2026', prog: 40 },
+      { titulo: 'Revisão de permissões — setor fiscal',    prioridade: 'alta',    data: '06/04/2026', prog: 75 },
+      { titulo: 'Auditoria de acessos inativos',           prioridade: 'normal',  data: '04/04/2026', prog: 50 },
+    ],
+    relatorio: [
+      { titulo: 'Revogação de acessos — lote desligamentos mar/26', tecnico: 'Lucas F.',   data: '03/04/2026', tempo: '1h 10min' },
+      { titulo: 'Ativação de 2FA — equipe diretoria',               tecnico: 'Mariana L.', data: '31/03/2026', tempo: '0h 50min' },
+      { titulo: 'Auditoria de contas inativas — Q1 2026',           tecnico: 'Lucas F.',   data: '28/03/2026', tempo: '3h 40min' },
+      { titulo: 'Criação de perfis — novos colaboradores fev/26',   tecnico: 'Mariana L.', data: '25/03/2026', tempo: '1h 00min' },
+      { titulo: 'Revisão geral de permissões — setor financeiro',   tecnico: 'Lucas F.',   data: '19/03/2026', tempo: '2h 20min' },
+    ],
+  },
+  sistemas: {
+    label: 'Gestão de Sistemas', url: 'sistemas',
+    chat: { nome: 'Anderson Souza', msg1: 'O sistema de ERP está fora do ar desde às 07h.', msg2: 'O serviço de e-mail também está com intermitências.' },
+    summary: { total: 82, concluidos: 68, tempoMedio: '2,9h' },
+    tickets: [
+      { titulo: 'ERP fora do ar — instância produção',   prioridade: 'urgente', status: 'Em andamento', data: '08/04/2026', hora: '07:05' },
+      { titulo: 'Serviço de e-mail com intermitências',  prioridade: 'urgente', status: 'Aberto',       data: '08/04/2026', hora: '07:40' },
+      { titulo: 'Atualização do sistema de BI pendente', prioridade: 'alta',    status: 'Agendado',     data: '07/04/2026', hora: '09:00' },
+      { titulo: 'Patch de segurança — 14 servidores',    prioridade: 'alta',    status: 'Em andamento', data: '06/04/2026', hora: '11:00' },
+      { titulo: 'Migração de licenças Office 365',       prioridade: 'normal',  status: 'Agendado',     data: '05/04/2026', hora: '14:00' },
+      { titulo: 'Revisão de scripts de inicialização',   prioridade: 'normal',  status: 'Aberto',       data: '04/04/2026', hora: '10:30' },
+      { titulo: 'Inventário de softwares instalados',    prioridade: 'baixa',   status: 'Em andamento', data: '03/04/2026', hora: '09:00' },
+    ],
+    chart: [
+      { servico: 'Suporte ao ERP',           req: 26, tempo: 4.2 },
+      { servico: 'Atualizações e patches',   req: 20, tempo: 2.8 },
+      { servico: 'Gestão de e-mail',         req: 15, tempo: 1.2 },
+      { servico: 'Monitoramento servidores', req: 12, tempo: 0.9 },
+      { servico: 'Licenças de software',     req: 9,  tempo: 1.5 },
+    ],
+    monitor: [
+      { titulo: 'ERP fora do ar — instância produção',   prioridade: 'urgente', data: '08/04/2026', prog: 68 },
+      { titulo: 'Serviço de e-mail com intermitências',  prioridade: 'urgente', data: '08/04/2026', prog: 35 },
+      { titulo: 'Patch de segurança — 14 servidores',    prioridade: 'alta',    data: '06/04/2026', prog: 43 },
+      { titulo: 'Revisão de scripts de inicialização',   prioridade: 'normal',  data: '04/04/2026', prog: 30 },
+      { titulo: 'Inventário de softwares instalados',    prioridade: 'baixa',   data: '03/04/2026', prog: 60 },
+    ],
+    relatorio: [
+      { titulo: 'Restauração ERP via snapshot 03/04',     tecnico: 'Priya S.',    data: '08/04/2026', tempo: '2h 10min' },
+      { titulo: 'Aplicação de patches KB — lote mar/26',  tecnico: 'Fernando O.', data: '01/04/2026', tempo: '3h 30min' },
+      { titulo: 'Migração Office 365 — grupo financeiro', tecnico: 'Priya S.',    data: '28/03/2026', tempo: '1h 45min' },
+      { titulo: 'Atualização antivírus — 80 estações',    tecnico: 'Fernando O.', data: '25/03/2026', tempo: '0h 40min' },
+      { titulo: 'Inventário de licenças — trimestre Q1',  tecnico: 'Priya S.',    data: '20/03/2026', tempo: '2h 00min' },
+    ],
+  },
+};
+
+const PCLASS = { urgente:'urgent', alta:'high', normal:'normal', baixa:'low' };
+const PLABEL = { urgente:'URGENTE', alta:'ALTA', normal:'NORMAL', baixa:'BAIXA' };
+const SCLASS = { 'Aberto':'open', 'Em andamento':'progress', 'Agendado':'scheduled' };
+
+function renderTickets(tickets) {
+  return tickets.map(t => `
+    <div class="ticket-card ${PCLASS[t.prioridade]}-ticket" data-prioridade="${t.prioridade}">
+      <div class="ticket-header">
+        <h3 class="ticket-title">${t.titulo}</h3>
+        <span class="priority-badge ${PCLASS[t.prioridade]}">${PLABEL[t.prioridade]}</span>
+      </div>
+      <div class="ticket-meta">
+        <span class="status-dot ${SCLASS[t.status]}"></span>
+        <span>Status: ${t.status}</span>
+        <span class="separator">•</span>
+        <span>${t.data}</span>
+        <span class="separator">•</span>
+        <span>${t.hora}</span>
+      </div>
+    </div>`).join('');
+}
+
+function renderDashSummary(s) {
+  const taxa = Math.round((s.concluidos / s.total) * 100);
+  const icons = {
+    total:      `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 9a3 3 0 0 1 0 6v2a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2v-2a3 3 0 0 1 0-6V7a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2z"/></svg>`,
+    concluidos: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>`,
+    tempo:      `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>`,
+  };
+  return `
+    <div class="dash-stat">
+      <div class="dash-stat-icon blue">${icons.total}</div>
+      <div><div class="dash-stat-val">${s.total}</div><div class="dash-stat-label">Requisições no mês</div></div>
+    </div>
+    <div class="dash-stat">
+      <div class="dash-stat-icon green">${icons.concluidos}</div>
+      <div><div class="dash-stat-val">${taxa}%</div><div class="dash-stat-label">Taxa de resolução</div></div>
+    </div>
+    <div class="dash-stat">
+      <div class="dash-stat-icon amber">${icons.tempo}</div>
+      <div><div class="dash-stat-val">${s.tempoMedio}</div><div class="dash-stat-label">Tempo médio de atend.</div></div>
+    </div>`;
+}
+
+function renderChart(dados) {
+  const maxReq   = Math.max(...dados.map(d => d.req));
+  const maxTempo = Math.max(...dados.map(d => d.tempo));
+  const rankClass = ['rank-1','rank-2','rank-3','rank-n','rank-n'];
+  // Ordena por req decrescente para atribuir ranks
+  const sorted = [...dados].sort((a,b) => b.req - a.req);
+  return dados.map(d => {
+    const pReq   = Math.round((d.req   / maxReq)   * 100);
+    const pTempo = Math.round((d.tempo / maxTempo)  * 100);
+    const rank   = sorted.indexOf(d) + 1;
+    const rc     = rankClass[rank - 1] || 'rank-n';
+    return `
+    <div class="bar-row">
+      <div class="bar-rank ${rc}">${rank}</div>
+      <span class="bar-row-label" title="${d.servico}">${d.servico}</span>
+      <div class="bar-tracks">
+        <div class="bar-track"><div class="bar-fill-req"  style="width:${pReq}%"></div></div>
+        <div class="bar-track"><div class="bar-fill-time" style="width:${pTempo}%"></div></div>
+      </div>
+      <div class="bar-vals">
+        <span class="bar-val-req">${d.req} req</span>
+        <span class="bar-val-time">${d.tempo}h</span>
+      </div>
+    </div>`;
+  }).join('');
+}
+
+function renderMonitor(itens) {
+  return itens.map(item => `
+    <div class="monitor-ticket ${PCLASS[item.prioridade]}-ticket">
+      <div class="monitor-ticket-top">
+        <span class="monitor-ticket-title">${item.titulo}</span>
+        <span class="priority-badge ${PCLASS[item.prioridade]}">${PLABEL[item.prioridade]}</span>
+      </div>
+      <div class="monitor-ticket-meta">
+        <span class="status-dot open"></span>
+        <span>Aberto em ${item.data}</span>
+      </div>
+      <div class="ticket-progress-row">
+        <div class="ticket-progress-track">
+          <div class="ticket-progress-fill prog-${item.prioridade}" style="width:${item.prog}%"></div>
+        </div>
+        <span class="ticket-progress-pct">${item.prog}%</span>
+      </div>
+    </div>`).join('');
+}
+
+const DOC_ICON = `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>`;
+
+function renderRelatorio(itens) {
+  return itens.map(item => `
+    <div class="report-ticket" title="Ver relatório: ${item.titulo}">
+      <div class="report-doc-icon">${DOC_ICON}</div>
+      <div class="report-ticket-body">
+        <div class="report-ticket-title">${item.titulo}</div>
+        <div class="report-ticket-meta">
+          <span>${item.tecnico}</span>
+          <span class="separator">•</span>
+          <span>${item.data}</span>
+          <span class="separator">•</span>
+          <span>${item.tempo}</span>
+          <span class="report-badge-concluido">CONCLUÍDO</span>
+        </div>
+      </div>
+      <div class="report-arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"></polyline></svg></div>
+    </div>`).join('');
+}
+
+function carregarGestao(area) {
+  const g = GESTOES[area] || GESTOES['redes'];
+  document.getElementById('areaLabel').textContent      = g.label;
+  document.getElementById('portalSubtitle').textContent = g.label.toUpperCase();
+  document.getElementById('browserUrl').textContent     = `https://mundi-gestao-ti.com.br/portal/${g.url}`;
+  document.getElementById('chatUserName').textContent   = g.chat.nome;
+  document.getElementById('chatMsg1').textContent       = g.chat.msg1;
+  document.getElementById('chatMsg2').textContent       = g.chat.msg2;
+  document.getElementById('ticketsContainer').innerHTML = renderTickets(g.tickets);
+  document.getElementById('dashSummary').innerHTML      = renderDashSummary(g.summary);
+  document.getElementById('dashChart').innerHTML        = renderChart(g.chart);
+  const agora = new Date();
+  const hora  = agora.getHours().toString().padStart(2,'0') + ':' + agora.getMinutes().toString().padStart(2,'0');
+  document.getElementById('dashStatusText').textContent = `Atualizado às ${hora}`;
+  document.getElementById('monitorContainer').innerHTML = renderMonitor(g.monitor);
+  document.getElementById('reportContainer').innerHTML  = renderRelatorio(g.relatorio);
+}
+
+const params = new URLSearchParams(window.location.search);
+carregarGestao(params.get('area') || 'redes');
+
+document.querySelectorAll('.tab-btn').forEach(btn => {
+  btn.addEventListener('click', function () {
+    document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+    document.querySelectorAll('.tab-content').forEach(c => c.classList.remove('active'));
+    this.classList.add('active');
+    document.getElementById('tab-' + this.dataset.tab).classList.add('active');
+  });
+});
+
+let filtroAtivo = null;
+document.querySelectorAll('.priority-btn').forEach(btn => {
+  btn.addEventListener('click', function () {
+    const f = this.dataset.filtro;
+    if (filtroAtivo === f) {
+      filtroAtivo = null;
+      document.querySelectorAll('.priority-btn').forEach(b => b.style.opacity = '1');
+      document.querySelectorAll('.ticket-card').forEach(c => c.style.display = '');
+    } else {
+      filtroAtivo = f;
+      document.querySelectorAll('.priority-btn').forEach(b => b.style.opacity = '0.4');
+      this.style.opacity = '1';
+      document.querySelectorAll('.ticket-card').forEach(c => {
+        c.style.display = c.dataset.prioridade === f ? '' : 'none';
+      });
+    }
+  });
+});
+
+const messageInput = document.getElementById('messageInput');
+const chatMessages = document.getElementById('chatMessages');
+function sendMessage() {
+  const text = messageInput.value.trim();
+  if (!text) return;
+  const now  = new Date();
+  const hora = now.getHours().toString().padStart(2,'0') + ':' + now.getMinutes().toString().padStart(2,'0');
+  const div  = document.createElement('div');
+  div.className = 'message sent';
+  div.innerHTML = `<p>${text}</p><span class="message-time">${hora}</span>`;
+  chatMessages.appendChild(div);
+  chatMessages.scrollTop = chatMessages.scrollHeight;
+  messageInput.value = '';
+}
+document.getElementById('sendBtn').addEventListener('click', sendMessage);
+messageInput.addEventListener('keypress', e => { if (e.key === 'Enter') sendMessage(); });
+</script>
+</body>
+</html>
